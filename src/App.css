@@ -43,7 +43,7 @@ h1 {
 }
 
 .food-item img {
-  max-width: 100%;
+  width: 90%;
   height: auto;
   margin-bottom: 10px;
 }
@@ -79,6 +79,5 @@ h1 {
 
   .food-item {
     margin-bottom: 20px;
-    box-shadow: none;
   }
 }
