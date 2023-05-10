@@ -1,37 +1,28 @@
 import "./App.css";
 import FoodItem from "./components/FoodItem";
-import burger from "./assets/burger.png";
-import sharwama from "./assets/sharwama.png";
+import Banner from "./components/Banner";
 import logo from "./assets/hotstoplogo.png";
+import { foodItems } from "./fooditems";
 
 const App = () => {
-  const foodItems = [
-    {
-      name: "Burger",
-      imageSrc: burger,
-      price: "NGN 2,500.00",
-    },
-    {
-      name: "Sharwama",
-      imageSrc: sharwama,
-      price: "NGN 2,000.00",
-    },
-  ];
-
   return (
     <>
       <div>
         <header>
           <img src={logo} alt="Logo" />
         </header>
+
         <h1>Food Ordering Site</h1>
+        <Banner />
         <div className="container">
           {foodItems.map((foodItem, index) => (
             <FoodItem
               key={index}
               name={foodItem.name}
               imageSrc={foodItem.imageSrc}
-              price={foodItem.price}
+              small_price={foodItem.small_price}
+              medium_price={foodItem.medium_price}
+              large_price={foodItem.large_price}
             />
           ))}
         </div>
