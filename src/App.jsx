@@ -7,12 +7,12 @@ import logo from "./assets/hotstoplogo.png";
 const App = () => {
   const foodItems = [
     {
-      name: "Pizza",
+      name: "Burger",
       imageSrc: burger,
       price: "NGN 2,500.00",
     },
     {
-      name: "Burger",
+      name: "Sharwama",
       imageSrc: sharwama,
       price: "NGN 2,000.00",
     },
