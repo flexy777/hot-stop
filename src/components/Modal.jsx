@@ -16,14 +16,22 @@ const Modal = ({ foodItem, closeModal }) => {
 
     closeModal();
   };
+  const handleClose = () => {
+    closeModal();
+  };
   return (
     <div className="modal">
       <div className="modal-content">
+        <button className="close-button" onClick={handleClose}>
+          &times;
+        </button>
         <h1 className="fw-bold">{foodItem}</h1>
 
         {foodItem === "Burger" ? (
           <div>
-            <label htmlFor="types">Choose a {foodItem} type:</label>
+            <label className="fw-semibold" htmlFor="types">
+              Choose a {foodItem} type:
+            </label>
             <select
               style={{
                 border: "2px solid black",
@@ -41,8 +49,11 @@ const Modal = ({ foodItem, closeModal }) => {
           </div>
         ) : (
           <div>
-            <label htmlFor="sizes">Choose a {foodItem} size:</label>
+            <label className="fw-semibold" htmlFor="sizes">
+              Choose a {foodItem} size:
+            </label>
             <select
+              className="mb-3"
               style={{
                 border: "2px solid black",
                 borderRadius: "5px",
@@ -58,7 +69,9 @@ const Modal = ({ foodItem, closeModal }) => {
               <option value="Large">Large</option>
             </select>
             <p>
-              <label htmlFor="types">Choose a {foodItem} type:</label>
+              <label className="fw-semibold" htmlFor="types">
+                Choose a {foodItem} type:
+              </label>
 
               <select
                 style={{
@@ -79,7 +92,7 @@ const Modal = ({ foodItem, closeModal }) => {
         )}
         {/* Add input fields or other options for size, toppings, etc. */}
         <p>
-          <button onClick={handleCheckout}>
+          <button className="fw-bold mt-3 " onClick={handleCheckout}>
             <Link
               className="checkout-link"
               to="#"
