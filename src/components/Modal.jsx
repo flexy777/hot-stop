@@ -6,7 +6,7 @@ const Modal = ({ foodItem, closeModal }) => {
   const [selectedType, setSelectedType] = React.useState("");
 
   const handleCheckout = () => {
-    const message = `Order: ${foodItem} - Size: ${selectedSize} - Type: ${selectedType}`;
+    const message = `Good day, I'll like to place an Order for: ${foodItem} - Size: ${selectedSize} - Type: ${selectedType}`;
     const phoneNumber = "08169798209"; // Replace with the recipient's phone number
 
     const encodedMessage = encodeURIComponent(message);
