@@ -149,3 +149,13 @@ h1 {
 .modal button:hover {
   background-color: #45a049;
 }
+
+.checkout-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.checkout-link:hover {
+  opacity: 0.8;
+}

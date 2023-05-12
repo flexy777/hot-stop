@@ -1,32 +1,93 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Modal = ({ foodItem, closeModal }) => {
+  const [selectedSize, setSelectedSize] = React.useState("");
+  const [selectedType, setSelectedType] = React.useState("");
+
   const handleCheckout = () => {
-    // Perform checkout logic here
+    const message = `Order: ${foodItem} - Size: ${selectedSize} - Type: ${selectedType}`;
+    const phoneNumber = "08169798209"; // Replace with the recipient's phone number
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappLink, "_blank");
+
     closeModal();
   };
   return (
     <div className="modal">
       <div className="modal-content">
         <h3>{foodItem}</h3>
-        <label for="cars">Choose a {foodItem} type:</label>
 
-        <select
-          style={{
-            border: "2px solid black",
-            borderRadius: "5px",
-            marginLeft: "5px",
-          }}
-          name="cars"
-          id="cars"
-        >
-          <option value="volvo">Small</option>
-          <option value="saab">Medium</option>
-          <option value="mercedes">Large</option>
-        </select>
+        {foodItem === "Burger" ? (
+          <div>
+            <label htmlFor="types">Choose a {foodItem} type:</label>
+            <select
+              style={{
+                border: "2px solid black",
+                borderRadius: "5px",
+                marginLeft: "5px",
+              }}
+              name="types"
+              id="types"
+              onChange={(e) => setSelectedType(e.target.value)}
+            >
+              <option value=""></option>
+              <option value="Beef">Beef</option>
+              <option value="Chicken">Chicken</option>
+            </select>{" "}
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="sizes">Choose a {foodItem} size:</label>
+            <select
+              style={{
+                border: "2px solid black",
+                borderRadius: "5px",
+                marginLeft: "5px",
+              }}
+              name="sizes"
+              id="sizes"
+              onChange={(e) => setSelectedSize(e.target.value)}
+            >
+              <option value=""></option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+            <p>
+              <label htmlFor="types">Choose a {foodItem} type:</label>
+
+              <select
+                style={{
+                  border: "2px solid black",
+                  borderRadius: "5px",
+                  marginLeft: "5px",
+                }}
+                name="types"
+                id="types"
+                onChange={(e) => setSelectedType(e.target.value)}
+              >
+                <option value=""></option>
+                <option value="Chicken">Chicken</option>
+                <option value="Beef">Beef</option>
+              </select>
+            </p>
+          </div>
+        )}
         {/* Add input fields or other options for size, toppings, etc. */}
         <p>
-          <button onClick={handleCheckout}>Checkout</button>
+          <button onClick={handleCheckout}>
+            <Link
+              className="checkout-link"
+              to="#"
+              onClick={(e) => e.preventDefault()}
+            >
+              Checkout
+            </Link>
+          </button>
         </p>
       </div>
     </div>
