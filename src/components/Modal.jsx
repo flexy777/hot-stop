@@ -20,12 +20,12 @@ const Modal = ({ foodItem, closeModal }) => {
     closeModal();
   };
   return (
-    <div className="modal">
+    <div className="modal text-center">
       <div className="modal-content">
         <button className="close-button" onClick={handleClose}>
           &times;
         </button>
-        <h1 className="fw-bold">{foodItem}</h1>
+        <h1 className="fw-bold mb-4">{foodItem}</h1>
 
         {foodItem === "Burger" ? (
           <div>
