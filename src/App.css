@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
@@ -24,11 +24,11 @@ header img {
   padding: 20px;
 }
 
-h1 {
+/* h1 {
   font-size: 28px;
   text-align: center;
   margin-bottom: 20px;
-}
+} */
 
 .food-item {
   background-color: #fff;
@@ -57,6 +57,7 @@ h1 {
   background-color: #4caf50;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -104,6 +105,7 @@ h1 {
   background-color: #4caf50;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;

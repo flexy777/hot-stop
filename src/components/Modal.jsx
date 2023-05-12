@@ -19,7 +19,7 @@ const Modal = ({ foodItem, closeModal }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <h3>{foodItem}</h3>
+        <h1 className="fw-bold">{foodItem}</h1>
 
         {foodItem === "Burger" ? (
           <div>

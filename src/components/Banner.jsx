@@ -23,10 +23,10 @@ const Banner = () => {
         {discounts.map((discount, index) => (
           <div key={index}>
             <div className="banner-content">
-              <p className="discount">
+              <p className="discount fw-bold">
                 Limited Time Offer: {discount} on {newFoodItems[index]}!
               </p>
-              <button className="order-button">Order Now</button>
+              <button className="order-button fw-bold">Order Now</button>
             </div>
           </div>
         ))}

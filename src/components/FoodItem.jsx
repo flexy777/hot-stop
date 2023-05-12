@@ -25,18 +25,20 @@ const FoodItem = ({
     <>
       {modalOpen && <Modal foodItem={name} closeModal={closeModal} />}
       <div className="food-item">
-        <h3>{name}</h3>
+        <h3 className="fw-bold">{name}</h3>
         <img className="food-item" src={imageSrc} alt={name} />
-        <p>
+        <p className="fw-bold">
           Small {name} Price: {small_price}
         </p>
-        <p>
+        <p className="fw-bold">
           Medium {name} Price: {medium_price}
         </p>
-        <p>
+        <p className="fw-bold">
           Large {name} Price: {large_price}
         </p>
-        <button onClick={handleOrderNow}>Order Now</button>
+        <button className="fw-bold" onClick={handleOrderNow}>
+          Order Now
+        </button>
       </div>
     </>
   );

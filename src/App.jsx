@@ -12,7 +12,7 @@ const App = () => {
           <img src={logo} alt="Logo" />
         </header>
 
-        <h1>Food Ordering Site</h1>
+        <h1 className="fw-bold text-center mb-4">Food Ordering Site</h1>
         <Banner />
         <div className="container">
           {foodItems.map((foodItem, index) => (
